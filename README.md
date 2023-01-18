@@ -4,7 +4,7 @@ This repository contains projects  for learning Flutter. It's intended for begin
 ## Getting Started
 
 1. Make sure you have [Flutter](https://flutter.dev/) installed on your machine. 
-2. Clone this repository using `git clone https://github.com/[username]/flutter-learning.git`
+2. Clone this repository using `git clone https://github.com/naushadali1/flutter-Development.git`
 3. Go to the repository directory using `cd flutter-Development`
 
 
