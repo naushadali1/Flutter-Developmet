@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'salaryItems.dart';
+import "Pages/salaryItems.dart";
 
 void main() {
   runApp(const MyApp());

@@ -104,7 +104,7 @@ class _SalaryItemsState extends State<SalaryItems> {
                       BoxDecoration(borderRadius: BorderRadius.circular(17)),
                   child: TextField(
                     controller: contdep,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                         hintText: "Enter Your Department"),
                   ),
