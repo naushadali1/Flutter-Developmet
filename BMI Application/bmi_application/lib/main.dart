@@ -15,9 +15,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(
-        title: '',
-      ),
+      debugShowCheckedModeBanner: false,
+      home: const MyHomePage(title: 'BMI App'),
     );
   }
 }
@@ -32,11 +31,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {});
-  }
+  var wtcont = TextEditingController();
+  var ftcont = TextEditingController();
+  var incont = TextEditingController();
+  String result = '';
+  var bgcolor = Color.fromARGB(255, 109, 140, 194);
 
   @override
   Widget build(BuildContext context) {
@@ -44,57 +43,102 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           // Here we take the value from the MyHomePage object that was created by
           // the App.build method, and use it to set our appbar title.
-          title: Text("BMI App"),
+          title: const Text("BMI APP"),
           centerTitle: true,
         ),
         body: Center(
           child: Container(
             width: 300,
-            height: 300,
+            height: 400,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                color: Color.fromARGB(255, 111, 110, 110)),
+              color: bgcolor,
+              border: Border.all(
+                width: 2,
+              ),
+              borderRadius: BorderRadius.circular(12),
+            ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                TextField(
-                  decoration: InputDecoration(
-                    labelText: "Enter your Weight",
-                    prefix: const Icon(Icons.line_weight_rounded),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(2)),
-                  ),
+              children: [
+                const Text(
+                  "BMI",
+                  style: TextStyle(fontSize: 23, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(
-                  height: 5,
+                const SizedBox(
+                  height: 7,
                 ),
                 TextField(
-                  decoration: InputDecoration(
-                    labelText: "Enter your heght in Feet",
-                    prefix: Icon(Icons.line_weight_rounded),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(2)),
-                  ),
+                  controller: wtcont,
+                  decoration: const InputDecoration(
+                      label: Text("Enter your Weight"),
+                      prefixIcon: Icon(Icons.line_weight)),
+                  keyboardType: TextInputType.number,
                 ),
-                SizedBox(
-                  height: 5,
+                const SizedBox(
+                  height: 7,
                 ),
                 TextField(
-                  decoration: InputDecoration(
-                    labelText: "Enter your Height in Inches",
-                    prefix: Icon(Icons.line_weight_rounded),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(2)),
-                  ),
+                  controller: ftcont,
+                  decoration: const InputDecoration(
+                      label: Text("Enter your height in feets"),
+                      prefixIcon: Icon(Icons.height)),
+                  keyboardType: TextInputType.number,
                 ),
-                SizedBox(
-                  height: 5,
+                const SizedBox(
+                  height: 7,
                 ),
-                ElevatedButton(onPressed: () {}, child: Text("Calculate")),
-                SizedBox(
-                  height: 5,
+                TextField(
+                  controller: incont,
+                  decoration: const InputDecoration(
+                      label: Text("Enter your height in Inches"),
+                      prefixIcon: Icon(Icons.height)),
+                  keyboardType: TextInputType.number,
                 ),
-                Text(" Your BMI Is ")
+                const SizedBox(
+                  height: 19,
+                ),
+                ElevatedButton(
+                    onPressed: () {
+                      var wt = wtcont.text.toString();
+                      var ft = ftcont.text.toString();
+                      var inch = incont.text.toString();
+                      if (wt != "" && ft != "" && inch != "") {
+                        var iinch = int.parse(inch);
+                        var ift = int.parse(ft);
+                        var iwt = int.parse(wt);
+                        var tinch = (ift * 12) + iinch;
+                        var tcmeter = tinch * 2.54;
+                        var tmeter = tcmeter / 100.0;
+                        var tbmi = iwt / (tmeter * tmeter);
+                        String msg;
+                        if (tbmi > 25) {
+                          msg = 'Your are Over weight';
+                          bgcolor = Color.fromARGB(255, 253, 90, 90);
+                        } else if (tbmi < 19) {
+                          msg = 'Your are under weight';
+                          bgcolor = Color.fromARGB(255, 246, 133, 133);
+                        } else {
+                          msg = 'Your are healthy';
+                          bgcolor = Color.fromARGB(255, 174, 249, 177);
+                        }
+                        setState(() {
+                          result =
+                              "$msg \n Your BMI is ${tbmi.toStringAsFixed(2)}";
+                        });
+                      } else {
+                        setState(() {
+                          result = "Please fill all Fields";
+                        });
+                      }
+                    },
+                    child: const Text('Caculate')),
+                const SizedBox(
+                  height: 6,
+                ),
+                Text(
+                  result,
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                )
               ],
             ),
           ),
