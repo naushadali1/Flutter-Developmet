@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'home.dart';
 
-void main(List<String> args) {
+void main() {
   runApp(const MyApp());
 }
 
@@ -13,9 +13,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Shallow tree",
       theme: ThemeData(
-        primarySwatch: Colors.grey,
+        primarySwatch: Colors.red,
       ),
-      home: const Home(),
+      home: const Home()
     );
   }
 }
