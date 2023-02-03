@@ -1,24 +1,13 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class ForgetPage extends StatelessWidget {
+  const ForgetPage({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        // ignore: prefer_const_literals_to_create_immutables
-        body: SafeArea(
-          child: Center(
-              child: Container(
+    return Center(
+        child: Container(
             height: 400, //height of container
             width: 400,
             decoration: BoxDecoration(
@@ -39,7 +28,7 @@ class MyApp extends StatelessWidget {
                   // ignore: prefer_const_constructors
                   Center(
                     child: const Text(
-                      "Login",
+                      "Forget Your Password",
                       style: TextStyle(
                           fontSize: 25,
                           fontWeight: FontWeight.bold,
@@ -51,7 +40,7 @@ class MyApp extends StatelessWidget {
                     height: 6,
                   ),
                   const Text(
-                    "Hello to mylogin page welocinme to \n your firt visirt in our website",
+                    "Hello reset your password",
                     style: TextStyle(fontSize: 14),
                   ),
                   // ignore: prefer_const_constructors
@@ -59,17 +48,7 @@ class MyApp extends StatelessWidget {
                     height: 7,
                   ),
                   Email(),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  const Passwords(),
 
-                  const SizedBox(
-                    height: 4,
-                  ),
-                  const Text(
-                    "Forgot Password",
-                  ),
                   const SizedBox(
                     height: 7,
                   ),
@@ -81,49 +60,13 @@ class MyApp extends StatelessWidget {
                   // ignore: prefer_const_constructors
                   Center(
                     child: const Text(
-                      "Don't have an Account? Sign Up",
+                      "Back to Login Screen",
                       style: TextStyle(fontSize: 9, fontFamily: 'Rubik Medium'),
                     ),
                   ),
                 ],
               ),
-            ),
-          )),
-        ),
-      ),
-    );
-  }
-}
-
-class Passwords extends StatelessWidget {
-  const Passwords({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 9),
-      child: TextFormField(
-        decoration: InputDecoration(
-          hintText: 'Password',
-          // ignore: prefer_const_constructors
-          prefixIcon: Icon(
-            Icons.password_sharp,
-            color: Colors.black,
-          ),
-          suffixIcon: const Icon(
-            Icons.visibility_off_outlined,
-            color: Colors.black,
-          ),
-          filled: true,
-          fillColor: const Color.fromARGB(255, 208, 214, 217),
-          border: OutlineInputBorder(
-              borderSide: const BorderSide(color: Colors.black),
-              borderRadius: BorderRadius.circular(10)),
-        ),
-      ),
-    );
+            )));
   }
 }
 
@@ -135,9 +78,9 @@ class Email extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 9),
-      child: TextFormField(
-        decoration: InputDecoration(
+        padding: const EdgeInsets.symmetric(horizontal: 9),
+        child: TextFormField(
+            decoration: InputDecoration(
           hintText: 'Email',
 
           // ignore: prefer_const_constructors
@@ -150,9 +93,7 @@ class Email extends StatelessWidget {
           border: OutlineInputBorder(
               borderSide: const BorderSide(color: Colors.black),
               borderRadius: BorderRadius.circular(10)),
-        ),
-      ),
-    );
+        )));
   }
 }
 
@@ -177,7 +118,7 @@ class Rows extends StatelessWidget {
           children: const [
             Center(
               child: Text(
-                "Login Page",
+                "Reset Password",
                 style: TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.bold,
@@ -212,7 +153,7 @@ class Buttons extends StatelessWidget {
       onPressed: () {},
       // ignore: prefer_const_constructors
       style: ButtonStyle(),
-      child: const Text("Login"),
+      child: const Text("Send Password to Email"),
     );
   }
 }
