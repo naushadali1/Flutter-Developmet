@@ -1,4 +1,8 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
+import 'package:lgoin_ui/widgets/email.dart';
+import 'package:lgoin_ui/widgets/rowImage.dart';
+import 'package:lgoin_ui/widgets/bottuns.dart';
 
 class ForgetPage extends StatelessWidget {
   const ForgetPage({Key? key}) : super(key: key);
@@ -21,7 +25,7 @@ class ForgetPage extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  Rows(),
+                  RowImage(),
                   const SizedBox(
                     height: 16,
                   ),
@@ -47,12 +51,12 @@ class ForgetPage extends StatelessWidget {
                   SizedBox(
                     height: 7,
                   ),
-                  Email(),
+                  const Email(),
 
                   const SizedBox(
                     height: 7,
                   ),
-                  Buttons(),
+                  // const Buttons(),
                   // ignore: prefer_const_constructors
                   SizedBox(
                     height: 10,
@@ -70,22 +74,25 @@ class ForgetPage extends StatelessWidget {
   }
 }
 
-class Email extends StatelessWidget {
-  const Email({
+class Passwords extends StatelessWidget {
+  const Passwords({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 9),
-        child: TextFormField(
-            decoration: InputDecoration(
-          hintText: 'Email',
-
+      padding: const EdgeInsets.symmetric(horizontal: 9),
+      child: TextFormField(
+        decoration: InputDecoration(
+          hintText: 'Password',
           // ignore: prefer_const_constructors
           prefixIcon: Icon(
-            Icons.email_rounded,
+            Icons.password_sharp,
+            color: Colors.black,
+          ),
+          suffixIcon: const Icon(
+            Icons.visibility_off_outlined,
             color: Colors.black,
           ),
           filled: true,
@@ -93,67 +100,9 @@ class Email extends StatelessWidget {
           border: OutlineInputBorder(
               borderSide: const BorderSide(color: Colors.black),
               borderRadius: BorderRadius.circular(10)),
-        )));
-  }
-}
-
-class Rows extends StatelessWidget {
-  const Rows({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const Image(
-          image: AssetImage('images/logo.png'),
-          height: 50,
-          width: 50,
         ),
-        const SizedBox(width: 20),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
-            Center(
-              child: Text(
-                "Reset Password",
-                style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Rubik Medium'),
-              ),
-            ),
-            Center(
-              child: Text(
-                "Welcome",
-                style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Rubik Medium',
-                    color: Colors.orange),
-              ),
-            ),
-          ],
-        ),
-      ],
+      ),
     );
   }
 }
 
-class Buttons extends StatelessWidget {
-  const Buttons({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {},
-      // ignore: prefer_const_constructors
-      style: ButtonStyle(),
-      child: const Text("Send Password to Email"),
-    );
-  }
-}

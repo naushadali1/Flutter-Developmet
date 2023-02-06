@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lgoin_ui/Pages/signup.dart';
-import 'forgetPassword.dart';
 import 'login.dart';
 
 void main() {
@@ -25,14 +23,6 @@ class MyApp extends StatelessWidget {
             child: Column(
               children: const [
                 LoginPage(),
-                SizedBox(
-                  height: 20,
-                ),
-                SignupPage(),
-                SizedBox(
-                  height: 20,
-                ),
-                ForgetPage(),
               ],
             ),
           )),
