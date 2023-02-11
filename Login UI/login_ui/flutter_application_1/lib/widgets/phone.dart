@@ -10,19 +10,20 @@ class Phone extends StatelessWidget {
     return Padding(
         padding: const EdgeInsets.symmetric(horizontal: 9),
         child: TextFormField(
+            keyboardType: TextInputType.phone,
             decoration: InputDecoration(
-          hintText: 'Names',
+              hintText: 'Phone',
 
-          // ignore: prefer_const_constructors
-          prefixIcon: Icon(
-            Icons.phone_callback,
-            color: Colors.black,
-          ),
-          filled: true,
-          fillColor: const Color.fromARGB(255, 208, 214, 217),
-          border: OutlineInputBorder(
-              borderSide: const BorderSide(color: Colors.black),
-              borderRadius: BorderRadius.circular(10)),
-        )));
+              // ignore: prefer_const_constructors
+              prefixIcon: Icon(
+                Icons.phone_callback,
+                color: Colors.black,
+              ),
+              filled: true,
+              fillColor: const Color.fromARGB(255, 208, 214, 217),
+              border: OutlineInputBorder(
+                  borderSide: const BorderSide(color: Colors.black),
+                  borderRadius: BorderRadius.circular(10)),
+            )));
   }
 }
