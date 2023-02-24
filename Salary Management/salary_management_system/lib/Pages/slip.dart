@@ -12,7 +12,7 @@ class _SalarySlipState extends State<SalarySlip> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Salary Slip'),
+        title: Text('Salary Slip  of'),
         centerTitle: true,
       ),
       body: Container(
