@@ -8,10 +8,16 @@ class Templets extends StatefulWidget {
     required this.id,
     required this.bps,
     required this.dep,
+    required this.jobtype,
+    required this.jobnature,
+    required this.status,
   }) : super(key: key);
   final String id;
   final String bps;
   final String dep;
+  final String jobtype;
+  final String jobnature;
+  final String status;
   @override
   State<Templets> createState() => _TempletsState();
 }
@@ -124,19 +130,19 @@ class _TempletsState extends State<Templets> {
                 ),
                 Center(
                   child: Text(
-                    "admin",
+                    "${widget.jobtype}",
                     style: TextStyle(fontSize: 15.0),
                   ),
                 ),
                 Center(
                   child: Text(
-                    "dailly based",
+                    "${widget.jobnature}",
                     style: TextStyle(fontSize: 15.0),
                   ),
                 ),
                 Center(
                   child: Text(
-                    "Active",
+                    "${widget.status}",
                     style: TextStyle(fontSize: 15.0),
                   ),
                 ),

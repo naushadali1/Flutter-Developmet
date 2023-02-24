@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import "Pages/salaryItems.dart";
+import 'Pages/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SalaryItems(),
+      home: const SplashScreen(),
     );
   }
 }
