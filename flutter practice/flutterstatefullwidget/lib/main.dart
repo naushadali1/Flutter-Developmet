@@ -77,7 +77,7 @@ class HomeState extends State<MyHomePage> {
                               result = "the Sum of $no1 and $no2 is $sum";
                               setState(() {});
                             },
-                            child: Text('Add')),
+                            child: Text('Addition')),
                         ElevatedButton(
                             onPressed: () {
                               var no1 = int.parse(no1cont.text.toString());

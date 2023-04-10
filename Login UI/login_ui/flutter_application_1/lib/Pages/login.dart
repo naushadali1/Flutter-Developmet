@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:lgoin_ui/Pages/forgetPassword.dart';
+import 'package:lgoin_ui/Pages/home_page.dart';
 import 'package:lgoin_ui/Pages/signup.dart';
 import 'package:lgoin_ui/widgets/bottuns.dart';
 import 'package:lgoin_ui/widgets/rowImage.dart';
 import 'package:lgoin_ui/widgets/passwords.dart';
 // import 'package:lgoin_ui/widgets/passwords.dart';
 import 'package:lgoin_ui/widgets/email.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -87,8 +89,17 @@ class _LoginPageState extends State<LoginPage> {
                     const SizedBox(
                       height: 7,
                     ),
-                    const Buttons(
+                    Buttons(
                       tittle: "Login",
+                      onPress: () async {
+                        SharedPreferences sp =
+                            await SharedPreferences.getInstance();
+                        sp.setBool('isLogin', true);
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomePage()));
+                      },
                     ),
                     // ignore: prefer_const_constructors
                     SizedBox(

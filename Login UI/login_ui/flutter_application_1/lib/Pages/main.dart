@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:lgoin_ui/Pages/splash_screen.dart';
-import 'login.dart';
-import 'signup.dart';
-import 'forgetPassword.dart';
 
 void main() {
   runApp(const MyApp());

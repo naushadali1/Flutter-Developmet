@@ -12,12 +12,12 @@ class _SalarySlipState extends State<SalarySlip> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Salary Slip  of'),
+        title: const Text('Salary Slip'),
         centerTitle: true,
       ),
       body: Container(
-          margin: EdgeInsets.only(top: 80),
-          padding: EdgeInsets.all(7),
+          margin: const EdgeInsets.only(top: 80),
+          padding: const EdgeInsets.all(7),
           decoration:
               BoxDecoration(border: Border.all(color: Colors.black, width: 1)),
           child: Column(children: [

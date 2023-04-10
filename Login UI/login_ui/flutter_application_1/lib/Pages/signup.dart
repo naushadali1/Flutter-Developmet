@@ -76,8 +76,9 @@ class SignupPage extends StatelessWidget {
                       height: 4,
                     ),
 
-                    const Buttons(
+                    Buttons(
                       tittle: "Sign Up",
+                      onPress: () {},
                     ),
                     // ignore: prefer_const_constructors
                     SizedBox(

@@ -1,6 +1,7 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
-import 'templatePage.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'templat_page.dart';
 
 class SalaryItems extends StatefulWidget {
   const SalaryItems({super.key});
@@ -112,7 +113,7 @@ class _SalaryItemsState extends State<SalaryItems> {
                     width: 200,
                     decoration:
                         BoxDecoration(borderRadius: BorderRadius.circular(17)),
-                    child: TextFormField(
+                    child: TextField(
                       controller: contjobNature,
                       decoration: const InputDecoration(
                           border: OutlineInputBorder(),
@@ -139,18 +140,14 @@ class _SalaryItemsState extends State<SalaryItems> {
                     width: 100,
                     margin: const EdgeInsets.only(bottom: 5),
                     child: ElevatedButton(
-                        onPressed: () {
+                        onPressed: () async {
+                          SharedPreferences sp =
+                              await SharedPreferences.getInstance();
+                          sp.setString('id', contid.toString());
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => Templets(
-                                  id: contid.text.toString(),
-                                  bps: contbps.text.toString(),
-                                  dep: contdep.text.toString(),
-                                  jobtype: contjobType.toString(),
-                                  jobnature: contjobNature.toString(),
-                                  status: contstatus.toString(),
-                                ),
+                                builder: (context) => Templets(),
                               ));
                         },
                         style: const ButtonStyle(

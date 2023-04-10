@@ -1,23 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'slip.dart';
 
 // ignore: must_be_immutable
 class Templets extends StatefulWidget {
   Templets({
     Key? key,
-    required this.id,
-    required this.bps,
-    required this.dep,
-    required this.jobtype,
-    required this.jobnature,
-    required this.status,
+    this.id,
+    this.bps,
+    this.dep,
+    this.jobtype,
+    this.jobnature,
+    this.status,
   }) : super(key: key);
-  final String id;
-  final String bps;
-  final String dep;
-  final String jobtype;
-  final String jobnature;
-  final String status;
+  String? id = "1";
+  String? bps;
+  String? dep;
+  String? jobtype;
+  String? jobnature;
+  String? status;
   @override
   State<Templets> createState() => _TempletsState();
 }
@@ -31,6 +32,7 @@ class _TempletsState extends State<Templets> {
         centerTitle: true,
       ),
       body: Container(
+        width: double.infinity,
         decoration: BoxDecoration(border: Border.all(width: 1)),
         padding: const EdgeInsets.only(bottom: 30),
         child: Column(children: [
@@ -49,10 +51,10 @@ class _TempletsState extends State<Templets> {
             columnWidths: const {
               0: FlexColumnWidth(1),
               1: FlexColumnWidth(2),
-              2: FlexColumnWidth(4),
-              3: FlexColumnWidth(3),
-              4: FlexColumnWidth(4),
-              5: FlexColumnWidth(2.5),
+              2: FlexColumnWidth(3),
+              3: FlexColumnWidth(5),
+              4: FlexColumnWidth(5),
+              5: FlexColumnWidth(5),
               6: FlexColumnWidth(3),
             },
             // ignore: prefer_const_literals_to_create_immutables
@@ -112,41 +114,41 @@ class _TempletsState extends State<Templets> {
               TableRow(children: [
                 Center(
                   child: Text(
-                    "${widget.id}",
-                    style: TextStyle(fontSize: 15.0),
+                    id,
+                    style: const TextStyle(fontSize: 15.0),
                   ),
                 ),
                 Center(
                   child: Text(
-                    "${widget.bps}",
-                    style: TextStyle(fontSize: 15.0),
+                    
+                    style: const TextStyle(fontSize: 15.0),
                   ),
                 ),
                 Center(
                   child: Text(
-                    "${widget.dep}",
-                    style: TextStyle(fontSize: 15.0),
+                    widget.dep,
+                    style: const TextStyle(fontSize: 15.0),
                   ),
                 ),
                 Center(
                   child: Text(
-                    "${widget.jobtype}",
-                    style: TextStyle(fontSize: 15.0),
+                    widget.jobtype,
+                    style: const TextStyle(fontSize: 15.0),
                   ),
                 ),
                 Center(
                   child: Text(
-                    "${widget.jobnature}",
-                    style: TextStyle(fontSize: 15.0),
+                    widget.jobnature,
+                    style: const TextStyle(fontSize: 15.0),
                   ),
                 ),
                 Center(
                   child: Text(
-                    "${widget.status}",
-                    style: TextStyle(fontSize: 15.0),
+                    widget.status,
+                    style: const TextStyle(fontSize: 15.0),
                   ),
                 ),
-                Center(
+                const Center(
                   child: Text(
                     "15000",
                     style: TextStyle(fontSize: 15.0),

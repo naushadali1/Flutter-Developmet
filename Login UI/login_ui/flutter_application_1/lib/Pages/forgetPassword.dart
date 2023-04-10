@@ -62,7 +62,10 @@ class ForgetPage extends StatelessWidget {
                     const SizedBox(
                       height: 7,
                     ),
-                    Buttons(tittle: "Send Code"),
+                    Buttons(
+                      tittle: "Send Code",
+                      onPress: () {},
+                    ),
                     const SizedBox(
                       height: 7,
                     ),
