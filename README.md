@@ -1,3 +1,4 @@
+Note: As you may have noticed, I have not been able to work on the project for the past month due to my university classes and other business commitments. However, I will be able to resume work on the project soon and I wanted to let you know my plans for catching up.
 # Flutter-Development 
 This repository contains projects  for learning Flutter. It's intended for beginners who are new to mobile app development and want to learn how to use Flutter to build their own apps.
 
